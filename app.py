@@ -6,6 +6,7 @@ from _config import app_conf as config
 from _config import secrets as secret
 from os import path
 from jinja2 import Environment, FileSystemLoader
+from cherrypy import request
 
 env = Environment(loader = FileSystemLoader('static'))
 
@@ -14,6 +15,16 @@ class App(object):
     def index(self):
         tmpl = env.get_template('index.html')
         return tmpl.render(title = 'Hello World!')
+
+    @cherrypy.expose
+    def cadastro(self):
+    	tmpl = env.get_template('cadastro.html')
+    	return tmpl.render(title ='Cadastro')
+
+    @cherrypy.expose
+    def HandleCadastro(self):
+    	
+
 
 
 cherrypy.quickstart(App(), '/', config.CHERRYPY_CONFIG)
