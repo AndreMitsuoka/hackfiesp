@@ -1,4 +1,4 @@
-document.getElementById('sdk-js').onload = function() {
+$(function(){ 
   console.log('SDK Loaded');
       
 /*  var btn = document.createElement('input');
@@ -18,7 +18,7 @@ document.getElementById('sdk-js').onload = function() {
     })
     .fail(function(){
       console.log("Digits failed to initialize")
-    })
+    });
     
 
     
@@ -107,4 +107,4 @@ document.getElementById('sdk-js').onload = function() {
     };
   } 
    
-};
+});
