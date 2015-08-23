@@ -23,6 +23,7 @@ class Product:
 		self.unity = unity
 		self.price = price
 		self.delivery = delivery
+		userDB.createProduct(self)
 
 	@staticmethod
 	def getProductsList():
