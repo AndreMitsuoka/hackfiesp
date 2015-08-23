@@ -21,8 +21,8 @@ class App(object):
 
     @cherrypy.expose
     def cadastro(self):
-    	tmpl = env.get_template('cadastro.html')
-    	return tmpl.render(title ='Cadastro')
+        tmpl = env.get_template('cadastro.html')
+        return tmpl.render(title ='Cadastro')
 
     @cherrypy.expose
     def cadastroProduto(self):
@@ -31,30 +31,35 @@ class App(object):
 
     @cherrypy.expose
     def createUserHandle(self,userId,idForUser,email,name,mobile):
-    	tmpl = env.get_template('produtos.html')
+        tmpl = env.get_template('produtos.html')
 
-    	if(userId == "cpf"):
-    		newUser = Person(idForUser,email,mobile)
-    	else:
-    		newUser = Company(idForUser,email,mobile)
+        if(userId == "cpf"):
+            newUser = Person(idForUser,email,mobile)
+        else:
+            newUser = Company(idForUser,email,mobile)
 
-    	productsList = Product.getProductsList()
+        productsList = Product.getProductsList()
 
-    	return tmpl.render(products=productsList,title = 'Produtos Listados')
+        return tmpl.render(products=productsList,title = 'Produtos Listados')
 
     @cherrypy.expose
     def createProductHandle(self, userId, productName, description, expireDate, unity, price, delivery=None):
         newProduct = Product(userId, productName, description, expireDate, unity, price, delivery)
+        
+        tmpl = env.get_template('produtos.html')
+        productsList = Product.getProductsList()
 
+        if productsList is None :
+            productsList = []
         return tmpl.render(products=productsList,title = 'Produtos Listados')        
 
     @cherrypy.expose
     def produtos(self):
-    	tmpl = env.get_template('produtos.html')
-    	productsList = Product.getProductsList()
-    	if productsList is None :
-    		productsList = []
-    	return tmpl.render(products=productsList,title = 'Produtos Listados')
+        tmpl = env.get_template('produtos.html')
+        productsList = Product.getProductsList()
+        if productsList is None :
+            productsList = []
+        return tmpl.render(products=productsList,title = 'Produtos Listados')
 
     @cherrypy.expose
     def login(self):
