@@ -44,7 +44,7 @@ class App(object):
 
     @cherrypy.expose
     def createProductHandle(self, userId, productName, description, expireDate, unity, price, categoria, delivery=None):
-        newProduct = Product(userId, productName, description, expireDate, unity, price, delivery,categoria)
+        newProduct = Product(userId, productName, description, expireDate, unity, price, categoria, delivery)
         
         tmpl = env.get_template('produtos.html')
         productsList = Product.getProductsList()
