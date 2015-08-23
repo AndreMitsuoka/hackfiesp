@@ -39,7 +39,8 @@ class App(object):
             newUser = Company(idForUser,email,mobile)
 
         productsList = Product.getProductsList()
-
+        if productsList is None :
+            productsList = []
         return tmpl.render(products=productsList,title = 'Produtos Listados')
 
     @cherrypy.expose

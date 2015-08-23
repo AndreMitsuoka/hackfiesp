@@ -13,7 +13,9 @@ class Person():
         self.user = User(email,mobile_number)
         self.cpf = cpf
         self.interests = interests
-        userDB.createUser(self,self.user)
+        if interests is not None:
+            print interests
+        userDB.createUser(self,self.user,interests)
 
 class Product:
     def __init__(self, owner,productName,desc, date, unity, price, categoria, delivery = False):
