@@ -22,4 +22,4 @@ def createProduct(product):
     r.hset("product;"+product.productName, "delivery", product.delivery)
 
 def getProducts():
-	r.keys("products;")
+    r.keys("products;")

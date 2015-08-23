@@ -2,5 +2,5 @@
 # -*- coding: utf-8 -*-
 
 class Product:
-	def _init_(self, owner):
-		pass
+    def _init_(self, owner):
+        pass
