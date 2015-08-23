@@ -1,4 +1,4 @@
-document.getElementById('sdk-js').onload = function() {
+$(function(){ 
   console.log('SDK Loaded');
       
 /*  var btn = document.createElement('input');
@@ -107,4 +107,4 @@ document.getElementById('sdk-js').onload = function() {
     };
   } 
    
-};
+});
