@@ -9,13 +9,14 @@ class Company():
         userDB.createUser(self,self.user)
 
 class Person():
-    def __init__(self, cpf,email,mobile_number):
+    def __init__(self, cpf,email,mobile_number,interests):
         self.user = User(email,mobile_number)
         self.cpf = cpf
+        self.interests = interests
         userDB.createUser(self,self.user)
 
 class Product:
-    def __init__(self, owner,productName,desc, date, unity, price, delivery = False):
+    def __init__(self, owner,productName,desc, date, unity, price, delivery = False, categoria):
         self.userEmail = owner
         self.productName = productName
         self.description = desc
@@ -23,6 +24,7 @@ class Product:
         self.unity = unity
         self.price = price
         self.delivery = delivery
+        self.categoria = categoria
         userDB.createProduct(self)
 
     @staticmethod
