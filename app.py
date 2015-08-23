@@ -3,10 +3,14 @@
 
 import cherrypy
 from _config import app_conf as config
-from _config import secrets as secret
+from _config import secrets
 from os import path
 from jinja2 import Environment, FileSystemLoader
 from cherrypy import request
+from models import Person, Company
+
+
+
 
 env = Environment(loader = FileSystemLoader('static'))
 
@@ -22,8 +26,14 @@ class App(object):
     	return tmpl.render(title ='Cadastro')
 
     @cherrypy.expose
-    def HandleCadastro(self):
-    	
+    def createUserHandle(self,userId,idForUser,email,name,mobile):
+    	if(userId == "cpf"):
+    		newUser = Person(idForUser,email,mobile)
+    	else:
+    		newUser = Company(idForUser,email,mobile)
+    	return ""
+
+
 
 
 

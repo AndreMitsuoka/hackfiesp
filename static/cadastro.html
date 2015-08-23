@@ -13,17 +13,17 @@
     <body>
         <div class="container">
             
-            <form style="text-align:center;" id="target" action="main" method="post">
+            <form style="text-align:center;" id="target" action="createUserHandle" method="post">
             <!-- Tem que ser dinâmico para modificar o campo e cpf/cpj-->
-                <select class="form-control" name="reservatorio">
+                <select class="form-control" name="userId">
                     <option value="cpf">Pessoa Física</option>
                     <option value="cnpj">Pessoa Jurídica</option>
                 </select>
-                <input id ="id" type="number" placeholder="">
-                <input id="email" type="email" placeholder="Entre com o seu e-mail"> 
-                <input id="nome" type="text"  placeholder ="Entre com o seu nome">
+                <input name ="idForUser"   type="number" placeholder="">
+                <input name="email" type="email" placeholder="Entre com o seu e-mail"> 
+                <input name="name"   type="text"  placeholder ="Entre com o seu nome">
                 <!-- Tem que ser dinâmico para chamar a API do DIGITS-->
-                <input id="mobile" type="tel" placeholder="Entre com o seu celular">
+                <input name="mobile" type="tel" placeholder="Entre com o seu celular">
             <p><button type="submit" class="btn btn-default" id="btn_submit">Enviar</p>
 
 
