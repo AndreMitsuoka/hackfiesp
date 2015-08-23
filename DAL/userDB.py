@@ -16,5 +16,5 @@ def createUser(self,user):
 def createProduct(self,product):
 	r.hset("product;"+product.name, userEmail,productName,expireDate,unity,price,delivery)
 
-def getProducts(self):
+def getProducts():
 	r.keys("products;")

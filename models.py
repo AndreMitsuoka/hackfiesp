@@ -15,7 +15,7 @@ class Person():
 		userDB.createUser(self,self.user)
 
 class Product:
-	def _init_(self, owner,productName,desc, date, unity, price, delivery = False):
+	def __init__(self, owner,productName,desc, date, unity, price, delivery = False):
 		self.userEmail = owner
 		self.productName = productName
 		self.description = desc
@@ -24,7 +24,7 @@ class Product:
 		self.price = price
 		self.delivery = delivery
 
-	@classmethod
+	@staticmethod
 	def getProductsList():
 		return userDB.getProducts()
 

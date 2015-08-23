@@ -38,9 +38,11 @@ class App(object):
     	return tmpl.render(products=productsList,title = 'Produtos Listados')
 
     @cherrypy.expose
-    def produtos(self):
+    def novoProduto(self):
     	tmpl = env.get_template('produtos.html')
     	productsList = Product.getProductsList()
+    	if productsList is None :
+    		productsList = []
     	return tmpl.render(products=productsList,title = 'Produtos Listados')
 
     @cherrypy.expose
