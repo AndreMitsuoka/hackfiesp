@@ -12,6 +12,7 @@ r = redis.Redis(connection_pool=pool)
 
 def createUser(self,user):
     r.hset("user;"+user.email,"email", user.email)
+    r.hset("user;"+user.email,"mobile_number", user.mobile_number)
 
 def createProduct(product):
     r.hset("product;"+product.productName, "owner", product.userEmail)
@@ -22,4 +23,4 @@ def createProduct(product):
     r.hset("product;"+product.productName, "delivery", product.delivery)
 
 def getProducts():
-    r.keys("products;")
+    r.keys("product;*")
