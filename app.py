@@ -25,6 +25,11 @@ class App(object):
     	return tmpl.render(title ='Cadastro')
 
     @cherrypy.expose
+    def cadastroProduto(self):
+        tmpl = env.get_template('new_produtos.html')
+        return tmpl.render(title ='Cadastro de produto')
+
+    @cherrypy.expose
     def createUserHandle(self,userId,idForUser,email,name,mobile):
     	tmpl = env.get_template('produtos.html')
 
@@ -36,6 +41,12 @@ class App(object):
     	productsList = Product.getProductsList()
 
     	return tmpl.render(products=productsList,title = 'Produtos Listados')
+
+    @cherrypy.expose
+    def createProductHandle(self, userId, productName, description, expireDate, unity, price, delivery=None):
+        newProduct = Product(userId, productName, description, expireDate, unity, price, delivery)
+
+        return tmpl.render(products=productsList,title = 'Produtos Listados')        
 
     @cherrypy.expose
     def produtos(self):
