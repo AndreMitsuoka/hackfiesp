@@ -30,7 +30,7 @@ class App(object):
         return tmpl.render(title ='Cadastro de produto')
 
     @cherrypy.expose
-    def createUserHandle(self,userId,idForUser,email,name,mobile):
+    def createUserHandle(self,userId,idForUser,email,name,mobile,interest):
         tmpl = env.get_template('produtos.html')
 
         if(userId == "cpf"):
@@ -43,7 +43,7 @@ class App(object):
         return tmpl.render(products=productsList,title = 'Produtos Listados')
 
     @cherrypy.expose
-    def createProductHandle(self, userId, productName, description, expireDate, unity, price, delivery=None):
+    def createProductHandle(self, userId, productName, description, expireDate, unity, price, delivery=None,categoria):
         newProduct = Product(userId, productName, description, expireDate, unity, price, delivery)
         
         tmpl = env.get_template('produtos.html')
