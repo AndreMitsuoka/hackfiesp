@@ -7,8 +7,7 @@ from _config import secrets
 from os import path
 from jinja2 import Environment, FileSystemLoader
 from cherrypy import request
-from models import Person, Company
-
+from models import Person, Company , Product
 
 
 
@@ -27,15 +26,22 @@ class App(object):
 
     @cherrypy.expose
     def createUserHandle(self,userId,idForUser,email,name,mobile):
+    	tmpl = env.get_template('produtos.html')
+
     	if(userId == "cpf"):
     		newUser = Person(idForUser,email,mobile)
     	else:
     		newUser = Company(idForUser,email,mobile)
-    	return ""
 
+    	productsList = Product.getProductsList()
 
+    	return tmpl.render(products=productsList,title = 'Produtos Listados')
 
-
+    @cherrypy.expose
+    def produtos(self):
+    	tmpl = env.get_template('produtos.html')
+    	productsList = Product.getProductsList()
+    	return tmpl.render(products=productsList,title = 'Produtos Listados')
 
     @cherrypy.expose
     def login(self):

@@ -11,5 +11,10 @@ pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
 r = redis.Redis(connection_pool=pool)
 
 def createUser(self,user):
-	r.hset(user.email,"email",user.email)
-	r.hset(user.email,"phone",user.mobile_number)
+	r.hset("user;"+user.email,user.email,user.mobile_number)
+
+def createProduct(self,product):
+	r.hset("product;"+product.name, userEmail,productName,expireDate,unity,price,delivery)
+
+def getProducts(self):
+	r.keys("products;")

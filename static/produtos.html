@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{title}}</title>
+
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/app.css" media="screen">
+    </head>
+    <body>
+        <header>
+            <button type="submit" class="btn btn-default" href="/cadastro.html">
+        </header>
+        
+        <div class="container">
+
+            <h3 id="titulo">Produtos</h3>
+            {% for produto in products %}
+            <div> 
+                <h4>{{ produto.productName }}<h4>
+                <h4>{{ produto.description }}<h4>
+                <h4>{{ produto.expireDate }}<h4>
+                <h4>{{ produto.unity }}<h4>
+                <h4>{{ produto.price }}<h4>
+                <h4>{{ produto.delivery }}<h4>
+            </div>
+                        
+            {% endfor %}
+
+
+        </div>
+
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </body>
+</html>
