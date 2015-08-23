@@ -34,9 +34,6 @@ class App(object):
     	return ""
 
 
-
-
-
     @cherrypy.expose
     def login(self):
         tmpl = env.get_template('login.html')

@@ -18,7 +18,7 @@ document.getElementById('sdk-js').onload = function() {
     })
     .fail(function(){
       console.log("Digits failed to initialize")
-    })
+    });
     
 
     
