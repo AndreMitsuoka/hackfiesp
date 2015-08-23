@@ -23,7 +23,7 @@ $(function(){
 
     
   /* Launch the Login to Digits flow. */
-  $("#loginButton").click(function(){
+  $("#verifyButton").click(function(){
     console.log('SDK Start Login flow');
     
     Digits.logIn()

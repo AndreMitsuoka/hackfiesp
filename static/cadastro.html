@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{title}}</title>
-
+        <script id="sdk-js" src="//cdn.digits.com/1/sdk.js" async></script>
         <link rel="icon" type="image/png" href="img/favicon.png">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/app.css" media="screen">
@@ -26,13 +26,15 @@
                 <input name="name"   type="text"  placeholder ="Entre com o seu nome">
                 <!-- Tem que ser dinâmico para chamar a API do DIGITS-->
                 <input name="mobile" type="tel" placeholder="Entre com o seu celular">
-            <p><button type="submit" class="btn btn-default" id="btn_submit">Enviar</p>
-
+            <p><input type="button" class="btn btn-default" id="verifyButton" value="Verificar"></p>
+            <br><br>
+            <p><button type="submit" class="btn btn-default" id="loginButton">Enviar</button></p>
 
         </div>
 
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="/js/digits.js"></script>
         <script src="/js/cadastro.js"></script>
     </body>
 </html>
