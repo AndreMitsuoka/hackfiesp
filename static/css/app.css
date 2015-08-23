@@ -1,0 +1,46 @@
+.form-control{
+
+}
+
+input {
+	position: relative;
+	top: 40px;
+	left: 0px;
+}
+
+p {
+	position: relative;
+	text-align: right;
+	top: 100px;
+	display: block;
+}
+
+body {
+	background-color:#4ecdc4;
+}
+
+/*#id{
+ 	position: relative;
+    padding: 2px;
+    top: 20px;
+    right: 0px;
+}
+
+#email{
+	position: relative;
+	padding: 2px;
+    top: 80px;
+    right: 0px;
+}
+
+#mobile{
+	position: relative;
+	padding: 2px;
+    top: 80px;
+    right: 0px;
+}
+
+#nome{
+	position: relative;
+	
+}*/
