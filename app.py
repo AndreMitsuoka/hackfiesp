@@ -43,7 +43,7 @@ class App(object):
         return tmpl.render(products=productsList,title = 'Produtos Listados')
 
     @cherrypy.expose
-    def createProductHandle(self, userId, productName, description, expireDate, unity, price, delivery=None,categoria):
+    def createProductHandle(self, userId, productName, description, expireDate, unity, price, categoria, delivery=None):
         newProduct = Product(userId, productName, description, expireDate, unity, price, delivery,categoria)
         
         tmpl = env.get_template('produtos.html')
