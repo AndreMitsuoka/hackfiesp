@@ -37,4 +37,10 @@ class App(object):
 
 
 
+    @cherrypy.expose
+    def login(self):
+        tmpl = env.get_template('login.html')
+        return tmpl.render(title = 'Realimente')
+
+
 cherrypy.quickstart(App(), '/', config.CHERRYPY_CONFIG)
