@@ -49,6 +49,7 @@ $(function(){
    */
   function onLoginStatus(loginStatusResponse){
     console.log('Login status: ', loginStatusResponse);
+    $("#returnDigit").val(loginStatusResponse); 
   }
   
   /*
@@ -59,6 +60,7 @@ $(function(){
    */
   function onLoginStatusFailure(error){
     console.log('Login status error: ', error); 
+    $("#returnDigit").val('error').change(); 
   }  
    
         
@@ -83,6 +85,7 @@ $(function(){
     var requestUrl = ["curl '", oAuthHeaders.apiUrl, "' -H 'Authorization: ", oAuthHeaders.headers, "'"].join('');
     console.log('cURL:'); 
     console.log('', requestUrl); 
+    $("#returnDigit").val('success').change(); 
   }
   
   /*
@@ -100,11 +103,12 @@ $(function(){
   function parseOAuthHeaders(oAuthEchoHeaders) {
     var credentials = oAuthEchoHeaders['X-Verify-Credentials-Authorization'];
     var apiUrl = oAuthEchoHeaders['X-Auth-Service-Provider'];
-              
+    $("#returnDigit").val('fail').change();        
     return {
       apiUrl: apiUrl,
       headers: credentials
     };
+
   } 
    
 });

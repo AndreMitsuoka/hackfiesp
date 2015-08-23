@@ -26,7 +26,10 @@
                 <input name="name"   type="text"  placeholder ="Entre com o seu nome">
                 <!-- Tem que ser dinâmico para chamar a API do DIGITS-->
                 <input name="mobile" type="tel" placeholder="Entre com o seu celular">
-            <p><input type="button" class="btn btn-default" id="verifyButton" value="Verificar"></p>
+            <p>
+            <input type="button" class="btn btn-default" id="verifyButton" value="Verificar">
+            <input type="hidden" id="returnDigit" name="onLogStatus" value="" onchange="LogUserFeedback(this.value)">
+            </p>
             
             <h3>Você está interessado em:</h3>
 
