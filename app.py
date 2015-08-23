@@ -16,7 +16,7 @@ env = Environment(loader = FileSystemLoader('static'))
 class App(object):
     @cherrypy.expose
     def index(self):
-        tmpl = env.get_template('index.html')
+        tmpl = env.get_template('landing/task-check-86.html')
         return tmpl.render(title = 'Hello World!')
 
     @cherrypy.expose

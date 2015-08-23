@@ -28,4 +28,8 @@ CHERRYPY_CONFIG = {
         'tools.staticdir.on': True,
         'tools.staticdir.dir': 'js',
     },
+    '/task-check-86_files': {
+        'tools.staticdir.on': True,
+        'tools.staticdir.dir': 'landing/task-check-86_files',
+    }
 }
